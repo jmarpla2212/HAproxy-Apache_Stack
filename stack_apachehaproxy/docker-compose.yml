@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+   apache1:
+      build:
+       context: ./
+       dockerfile: Dockerfile-Apache1
+      expose:
+        - 80
+      container_name: apache1
+
+   apache2:
+      build:
+       context: ./
+       dockerfile: Dockerfile-Apache2
+      expose:
+        - 80
+      container_name: apache2
+  
+   haproxy:
+      image: haproxytech/haproxy-alpine:2.4
+      volumes:
+         - ./:/usr/local/etc/haproxy:ro
+      ports:
+         - "80:80"
+         - "8404:8404"
+      depends_on:
+         - apache1
+         - apache2
+
