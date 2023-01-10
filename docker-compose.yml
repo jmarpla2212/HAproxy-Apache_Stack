@@ -21,7 +21,7 @@ services:
       volumes:
          - ./:/usr/local/etc/haproxy:ro
       expose:
-         - "85"
+         - "87"
          - "8404"
       depends_on:
          - apache1
