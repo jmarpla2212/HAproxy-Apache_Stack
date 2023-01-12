@@ -21,7 +21,7 @@ services:
       volumes:
          - ./:/usr/local/etc/haproxy:ro
       expose:
-         - "80"
+         - "86"
       ports:
          - 8404:8404
       depends_on:
