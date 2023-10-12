@@ -1,1 +1,1 @@
-onlain 2.0
+Stack for deploy HAproxy and Apache for load balancing.
